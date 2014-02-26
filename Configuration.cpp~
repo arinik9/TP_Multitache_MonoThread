@@ -53,7 +53,7 @@ void afficherInfoSegment(int shmid) {
   printf("taille du segment : %d\n",buf.shm_segsz) ;
 }
 
-void detruireSegment(int shmid) {
+void detruitSegment(int shmid) {
 
   if (shmctl(shmid,IPC_RMID,NULL) == -1){
     perror("Erreur lors de la destruction") ;
