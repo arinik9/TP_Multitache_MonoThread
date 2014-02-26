@@ -1,17 +1,17 @@
 /*************************************************************************
-                           XXX  -  description
+                           Entree  -  description
                              -------------------
     début                : XXX
     copyright            : (C) XXX par XXX
     e-mail               : XXX
 *************************************************************************/
 
-//---------- Interface de la tâche <Mere> (fichier Mere.h) -------
-#if ! defined ( Mere_H )
-#define Mere_H
+//---------- Interface de la tâche <Entree> (fichier Entree.h) -------
+#if ! defined ( Entree_H )
+#define Entree_H
 
 //------------------------------------------------------------------------
-// Rôle de la tâche <Mere>
+// Rôle de la tâche <Entree>
 //
 //
 //------------------------------------------------------------------------
@@ -22,6 +22,7 @@
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
+
 //////////////////////////////////////////////////////////////////  PUBLIC
 //---------------------------------------------------- Fonctions publiques
 // type Nom ( liste de paramètres );
@@ -29,7 +30,7 @@
 //
 // Contrat :
 //
-int main();
+void Entree();
 
-#endif // Mere_H
+#endif // Entree_H
 

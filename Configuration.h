@@ -1,17 +1,17 @@
 /*************************************************************************
-                           XXX  -  description
+                           Configuration  -  description
                              -------------------
     début                : XXX
     copyright            : (C) XXX par XXX
     e-mail               : XXX
 *************************************************************************/
 
-//---------- Interface de la tâche <Mere> (fichier Mere.h) -------
-#if ! defined ( Mere_H )
-#define Mere_H
+//---------- Interface de la tâche <Configuration> (fichier Configuration.h) -------
+#if ! defined ( Configuration_H )
+#define Configuration_H
 
 //------------------------------------------------------------------------
-// Rôle de la tâche <Mere>
+// Rôle de la tâche <Configuration>
 //
 //
 //------------------------------------------------------------------------
@@ -22,6 +22,11 @@
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
+struct msgbuf {
+	long type;
+	char texte[3];
+};
+
 //////////////////////////////////////////////////////////////////  PUBLIC
 //---------------------------------------------------- Fonctions publiques
 // type Nom ( liste de paramètres );
@@ -29,7 +34,6 @@
 //
 // Contrat :
 //
-int main();
 
-#endif // Mere_H
+#endif // Configuration_H
 
