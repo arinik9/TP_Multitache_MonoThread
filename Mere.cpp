@@ -50,7 +50,7 @@ int main()
 	MemHabituel memHab;//struct	
   int shmid ;
   char *name = (char *) malloc(sizeof(memHab)*sizeof(char)) ;
-
+//
   name = "Configuration.cpp" ;
 
   shmid = creeSegment(sizeof(memHab),name,1) ;
