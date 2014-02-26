@@ -53,11 +53,11 @@ int main()
 //
   name = "Configuration.cpp" ;
 
-  shmid = creeSegment(sizeof(memHab),name,1) ;
+  shmid = creerSegment(sizeof(memHab),name,1) ;
 
-  infoSegment(shmid) ;
+  afficherInfoSegment(shmid) ;
 
-  detruitSegment(shmid) ;
+  detruireSegment(shmid) ;
 	//-----Initialisation des boîtes aux lettres
 	/*key_t cleEntree;
 	key_t cleSortie;
