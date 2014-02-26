@@ -70,7 +70,7 @@ if (read == -1){
 exit(EXIT_FAILURE);
 }
         nb++;
-        printf("Message %d: (type=%d) %s\n",nb, message.type, message.texte); 
+        printf("Message %d: (type=%ld) %s\n",nb, message.type, message.texte); 
 
 	
 } //----- fin de Entree

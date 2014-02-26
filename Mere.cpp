@@ -23,7 +23,7 @@
 #include "Mere.h"
 #include "Clavier.h"
 #include "Entree.h"
-//#include "Configuration.h"
+#include "Configuration.h"
 ///////////////////////////////////////////////////////////////////  PRIVE
 //------------------------------------------------------------- Constantes
 //------------------------------------------------------------------ Types
@@ -47,12 +47,19 @@ int main()
 	//InitialiserApplication(XTERM);
 	//pid_t pidHeure = ActiverHeure();
 	
+	MemHabituel memHab;//struct	
+  int shmid ;
+  char *name = (char *) malloc(sizeof(memHab)*sizeof(char)) ;
+
+  name = "Configuration.cpp" ;
+
+  shmid = creeSegment(sizeof(memHab),name,1) ;
+
+  infoSegment(shmid) ;
+
+  detruitSegment(shmid) ;
 	//-----Initialisation des boîtes aux lettres
-	struct msgbuf {
-	long type;
-	char texte[3];
-};
-	key_t cleEntree;
+	/*key_t cleEntree;
 	key_t cleSortie;
 	int tailleEntree, writeEntree, id_fileEntree;
 	int tailleSortie, writeSortie, id_fileSortie;
@@ -68,7 +75,7 @@ int main()
 		perror("Erreur creation boite aux lettres sortie");
 		exit(EXIT_FAILURE);
 	}
-	msgbuf messageEntree;
+	Msgbuf messageEntree;
 	messageEntree.type=1;
 	strcpy(messageEntree.texte, "OH");
 	tailleEntree=strlen(messageEntree.texte);
@@ -87,7 +94,7 @@ int main()
 		else{
 			//Synchronisation de fin normale entre le père et le fils
 			waitpid(pidEntree, NULL, 0);
-		}
+		}*/
 
 	//-----Initialisation du clavier
 	/*pid_t pidClavier = fork();

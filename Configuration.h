@@ -22,11 +22,25 @@
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
-struct msgbuf {
+struct Msgbuf {
 	long type;
 	char texte[3];
 };
 
+
+ struct MemHabituel{
+	unsigned int numPlace;
+	char occupation;
+	const char* heureEntree;
+	bool plein;
+};
+
+struct MemEnCasPlein{
+	char porte;
+	char usager;
+	const char* Heure;
+	unsigned int matricule;
+};
 //////////////////////////////////////////////////////////////////  PUBLIC
 //---------------------------------------------------- Fonctions publiques
 // type Nom ( liste de paramètres );
@@ -35,5 +49,8 @@ struct msgbuf {
 // Contrat :
 //
 
+int creeSegment(int size,char *name,int cle);
+void infoSegment(int shmid);
+void detruitSegment(int shmid);
 #endif // Configuration_H
 
