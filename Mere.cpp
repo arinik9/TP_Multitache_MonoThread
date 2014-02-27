@@ -2,7 +2,11 @@
                            Mere.cpp  -  description
                              -------------------
     début                : Mardi 21 Février 2014
+<<<<<<< HEAD
     copyright            : (C) 2014 par B3329  
+=======
+    copyright            : (C) 2014 par B3329
+>>>>>>> Lecture-Ecriture Dans la Memoire Partagée
     e-mail               : william.vitali@insa-lyon.fr; nejat.arinik@insa-lyon.fr; niamh.lawlor@insa-lyon.fr
 *************************************************************************/
 //---------- Réalisation de la tâche <Mere> (fichier Mere.cpp) ---
@@ -22,7 +26,7 @@
 #include <iostream>
 #include<stdio.h>
 #include<stdlib.h>
-//------------------------------------------------------ Include personnel
+//------------------------------------------------------- Include personnel
 #include "Mere.h"
 #include "Clavier.h"
 #include "Entree.h"
@@ -57,6 +61,7 @@ int main()
  
 	int flag = 0 ; // un drapeau attache au segment
 	MemEtat memEtat;//struct	
+<<<<<<< HEAD
 
   	char *name = (char *) malloc(sizeof(memEtat)*sizeof(char)) ;
   	//char* name = new char(sizeof(memEtat))
@@ -66,6 +71,17 @@ int main()
 	printf("Je commence par m'attacher le segment de memoire Mere.cpp\n") ;
 	mem = (char*) shmat(shmid,0,flag) ;
 
+=======
+
+  	char *name = (char *) malloc(sizeof(memEtat)*sizeof(char)) ;
+  	//char* name = new char(sizeof(memEtat))
+	name = "Configuration.cpp" ;
+
+	shmid = creerSegment(sizeof(memEtat),name,1) ;
+	printf("Je commence par m'attacher le segment de memoire Mere.cpp\n") ;
+	mem = (char*) shmat(shmid,0,flag) ;
+
+>>>>>>> Lecture-Ecriture Dans la Memoire Partagée
 	if (mem ==(char*)-1){
 	perror("attachement impossible") ;
 	exit(1) ;

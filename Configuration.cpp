@@ -1,7 +1,11 @@
 /*************************************************************************
                            Configuration.cpp  -  description
                              -------------------
+<<<<<<< HEAD
     début                : Mardi 25 Février 2014  
+=======
+    début                : Mardi 25 Février 2014
+>>>>>>> Lecture-Ecriture Dans la Memoire Partagée
     copyright            : (C) 2014 par B3329
     e-mail               : william.vitali@insa-lyon.fr; nejat.arinik@insa-lyon.fr; niamh.lawlor@insa-lyon.fr
 *************************************************************************/
@@ -18,7 +22,7 @@
 #include <stdlib.h>
 //------------------------------------------------------ Include personnel
 #include "Configuration.h"
-
+//
 ///////////////////////////////////////////////////////////////////  PRIVE
 //------------------------------------------------------------- Constantes
 
@@ -93,3 +97,7 @@ void detruireSegment(int shmid) {
 		exit(1) ;
 	}
 }//----- fin de detruireSegment
+<<<<<<< HEAD
+=======
+
+>>>>>>> Lecture-Ecriture Dans la Memoire Partagée

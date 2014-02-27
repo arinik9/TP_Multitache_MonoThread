@@ -25,3 +25,4 @@ $(EXE) : $(OBJ) $(MAIN).o
 
 clean :
 	$(RM) -f $(OBJ) $(MAIN).o core
+
