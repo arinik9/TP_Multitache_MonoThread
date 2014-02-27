@@ -31,6 +31,6 @@
 // Contrat :
 //
 void Entree();
-
+//
 #endif // Entree_H
 
