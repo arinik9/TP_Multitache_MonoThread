@@ -2,35 +2,6 @@
                            Entree.cpp  -  description
                              -------------------
     début                : Mardi 25 Février 2014
-<<<<<<< HEAD
-    copyright            : (C) 2014 par B3329  
-=======
-    copyright            : (C) 2014 par B3329
->>>>>>> Lecture-Ecriture Dans la Memoire Partagée
-    e-mail               : william.vitali@insa-lyon.fr; nejat.arinik@insa-lyon.fr; niamh.lawlor@insa-lyon.fr
-*************************************************************************/
-//---------- Réalisation de la tâche <Entree> (fichier Entree.cpp) ---
-/////////////////////////////////////////////////////////////////  INCLUDE
-//-------------------------------------------------------- Include système
-#include <Menu.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <Outils.h>
-#include <Heure.h>
-#include <signal.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <stdio.h>
-#include <sys/ipc.h>
-#include <sys/shm.h>
-#include <sys/msg.h>
-#include <string.h>
-#include <iostream>
-#include "Configuration.h"
-
-//
-//------------------------------------------------------ Include personnel
-#include "Entree.h"
 ///////////////////////////////////////////////////////////////////  PRIVE
 //------------------------------------------------------------- Constantes
 //------------------------------------------------------------------ Types

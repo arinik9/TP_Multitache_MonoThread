@@ -1,11 +1,6 @@
 /*************************************************************************
                            Configuration.h  -  description
                              -------------------
-<<<<<<< HEAD
-    début                : Mardi 25 Février 2014  
-=======
-    début                : Mardi 25 Février 2014
->>>>>>> Lecture-Ecriture Dans la Memoire Partagée
     copyright            : (C) 2014 par B3329
     e-mail               : william.vitali@insa-lyon.fr; nejat.arinik@insa-lyon.fr; niamh.lawlor@insa-lyon.fr
 *************************************************************************/
