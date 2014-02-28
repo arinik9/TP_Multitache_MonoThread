@@ -1,9 +1,9 @@
 /*************************************************************************
-                           XXX  -  description
+                           Mere.cpp  -  description
                              -------------------
-    début                : XXX
-    copyright            : (C) XXX par XXX
-    e-mail               : XXX
+    début                : Mardi 21 Février 2014
+    copyright            : (C) 2014 par B3329  
+    e-mail               : william.vitali@insa-lyon.fr; nejat.arinik@insa-lyon.fr; niamh.lawlor@insa-lyon.fr
 *************************************************************************/
 //---------- Réalisation de la tâche <Mere> (fichier Mere.cpp) ---
 /////////////////////////////////////////////////////////////////  INCLUDE
@@ -16,14 +16,20 @@
 #include <sys/wait.h>
 #include <stdio.h>
 #include <sys/ipc.h>
+#include <sys/shm.h>
 #include <sys/msg.h>
 #include <string.h>
 #include <iostream>
+#include<stdio.h>
+#include<stdlib.h>
 //------------------------------------------------------ Include personnel
 #include "Mere.h"
 #include "Clavier.h"
 #include "Entree.h"
 #include "Configuration.h"
+
+	
+
 ///////////////////////////////////////////////////////////////////  PRIVE
 //------------------------------------------------------------- Constantes
 //------------------------------------------------------------------ Types
@@ -43,21 +49,42 @@
 int main()
 // Algorithme :
 //
-{	//-----Initialisation affichage
+{
+	//-----Initialisation affichage
 	//InitialiserApplication(XTERM);
 	//pid_t pidHeure = ActiverHeure();
+	char *mem ;
+ 
+	int flag = 0 ; // un drapeau attache au segment
+	MemEtat memEtat;//struct	
+
+  	char *name = (char *) malloc(sizeof(memEtat)*sizeof(char)) ;
+  	//char* name = new char(sizeof(memEtat))
+	name = "Configuration.cpp" ;
+
+	shmid = creerSegment(sizeof(memEtat),name,1) ;
+	printf("Je commence par m'attacher le segment de memoire Mere.cpp\n") ;
+	mem = (char*) shmat(shmid,0,flag) ;
+
+	if (mem ==(char*)-1){
+	perror("attachement impossible") ;
+	exit(1) ;
+	}
+	//printf("je vais ecrire un message que papa va afficher\n") ;
+	strcpy(mem,"Turquie, ele est belle, magnifique!! Oh la la!!");
+	printf("Bon, c'est pas tout ca mais il est temps de mourrir\n") ;
+        //printf("avant tout detachons le segment partagee\n") ;
+        if(shmdt(mem)==-1){
+        perror("detachement impossible") ;
+        exit(1) ;
+        }
+        //printf("maintenant que c'est fait, bye bye\n") ;
+
+
 	
-	MemHabituel memHab;//struct	
-  int shmid ;
-  char *name = (char *) malloc(sizeof(memHab)*sizeof(char)) ;
-//
-  name = "Configuration.cpp" ;
+	//afficherInfoSegment(shmid) ;
+	//detruireSegment(shmid) ;
 
-  shmid = creerSegment(sizeof(memHab),name,1) ;
-
-  afficherInfoSegment(shmid) ;
-
-  detruireSegment(shmid) ;
 	//-----Initialisation des boîtes aux lettres
 	/*key_t cleEntree;
 	key_t cleSortie;
@@ -80,7 +107,7 @@ int main()
 	strcpy(messageEntree.texte, "OH");
 	tailleEntree=strlen(messageEntree.texte);
 	msgsnd(id_fileEntree, &messageEntree, tailleEntree+1, 0);
-	//msgsnd(id_fileEntree, &messageEntree, tailleEntree+1, 0);
+	//msgsnd(id_fileEntree, &messageEntree, tailleEntree+1, 0);)*/
 
 	//-----Initialisation de la tache Entree
 		pid_t pidEntree = fork();
@@ -94,7 +121,7 @@ int main()
 		else{
 			//Synchronisation de fin normale entre le père et le fils
 			waitpid(pidEntree, NULL, 0);
-		}*/
+		}
 
 	//-----Initialisation du clavier
 	/*pid_t pidClavier = fork();
@@ -113,4 +140,3 @@ int main()
 	//TerminerApplication(true);
 	return 0;
 } //----- fin de main
-
