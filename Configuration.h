@@ -1,9 +1,9 @@
 /*************************************************************************
-                           Configuration  -  description
+                           Configuration.h  -  description
                              -------------------
-    début                : XXX
-    copyright            : (C) XXX par XXX
-    e-mail               : XXX
+    début                : Mardi 25 Février 2014  
+    copyright            : (C) 2014 par B3329
+    e-mail               : william.vitali@insa-lyon.fr; nejat.arinik@insa-lyon.fr; niamh.lawlor@insa-lyon.fr
 *************************************************************************/
 
 //---------- Interface de la tâche <Configuration> (fichier Configuration.h) -------
@@ -28,14 +28,14 @@ struct Msgbuf {
 };
 
 
- struct MemHabituel{
+ struct MemEtat{
 	unsigned int numPlace;
 	char occupation;
 	const char* heureEntree;
 	bool plein;
 };
 
-struct MemEnCasPlein{
+struct MemDemandes{
 	char porte;
 	char usager;
 	const char* Heure;
@@ -53,4 +53,3 @@ int creerSegment(int size,char *name,int cle);
 void afficherInfoSegment(int shmid);
 void detruireSegment(int shmid);
 #endif // Configuration_H
-
