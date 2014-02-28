@@ -1,13 +1,13 @@
-EXE = parking
+EXE = Parking
 CC = g++
 EDL = g++
-INC_PATH = -I./ # chemins des répertoires d'interfaces
-LIB_PATH = -L./ -L/lib64 # chemins des répertoires de bibliothèques
+INC_PATH = -I./ -I/shares/public/tp/tp-multitache/ # chemins des répertoires d'interfaces
+LIB_PATH = -L./ -L/shares/public/tp/tp-multitache/ -L/lib64 # chemins des répertoires de bibliothèques
 LIBS = -ltp -lncurses -ltcl
 EDL_FLAG = $(LIB_PATH) -o $(EXE)
 CC_FLAG = $(INC_PATH) -Wall -fexceptions -c -o
-MAIN = main
-INT = 
+MAIN = Mere
+INT = Clavier.h Entree.h Configuration.h
 REA = $(INT:.h=.cpp)
 OBJ = $(INT:.h=.o)
 RM = rm
