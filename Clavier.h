@@ -1,9 +1,9 @@
 /*************************************************************************
-                           Clavier  -  description
+                           Clavier.h  -  description
                              -------------------
-    début                : XXX
-    copyright            : (C) XXX par XXX
-    e-mail               : XXX
+    début                : Mardi 21 Février 2014  
+    copyright            : (C) 2014 par B3329
+    e-mail               : william.vitali@insa-lyon.fr; nejat.arinik@insa-lyon.fr; niamh.lawlor@insa-lyon.fr
 *************************************************************************/
 
 //---------- Interface de la tâche <Clavier> (fichier Clavier.h) -------
@@ -34,4 +34,3 @@ void Clavier();
 void Commande ( char code, unsigned int valeur );
 
 #endif // Clavier_H
-
