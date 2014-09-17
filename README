@@ -1,0 +1,3 @@
+Il faut installer quelques bibliothèques:
+-lib tcl
+-lib ncurses
