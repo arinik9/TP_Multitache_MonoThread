@@ -18,30 +18,38 @@
 
 /////////////////////////////////////////////////////////////////  INCLUDE
 //--------------------------------------------------- Interfaces utilisées
+#include <time.h>
+#include "Outils.h"
 
 //------------------------------------------------------------- Constantes
+#define DROITS 0660 // Droits d'accès
 
 //------------------------------------------------------------------ Types
-struct Msgbuf {
-	long type;
-	char texte[3];
-};
 
 
- struct MemEtat{
-	unsigned int numPlace;
-	char occupation;
-	const char* heureEntree;
-	bool plein;
+struct Voiture{
+	long numPorte;
+	enum TypeUsager usager;
+	time_t heureArrivee;
+	int matricule;
 };
 
-struct MemDemandes{
-	char porte;
-	char usager;
-	const char* Heure;
-	unsigned int matricule;
+struct messageSortie{
+	long numPorte;
+	int numPlace;
 };
+
+struct MemoirePartagee{
+	int placesDispos;
+	Voiture parking[8];
+	Voiture demandes[3];
+};
+	
+
 //////////////////////////////////////////////////////////////////  PUBLIC
+
+
+
 //---------------------------------------------------- Fonctions publiques
 // type Nom ( liste de paramètres );
 // Mode d'emploi :
@@ -49,7 +57,6 @@ struct MemDemandes{
 // Contrat :
 //
 
-int creerSegment(int size,char *name,int cle);
-void afficherInfoSegment(int shmid);
-void detruireSegment(int shmid);
 #endif // Configuration_H
+
+

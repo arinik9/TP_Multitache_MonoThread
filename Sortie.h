@@ -7,8 +7,8 @@
 *************************************************************************/
 
 //---------- Interface de la tâche <Entree> (fichier Entree.h) -------
-#if ! defined ( Entree_H )
-#define Entree_H
+#if ! defined ( Sortie_H )
+#define Sortie_H
 
 //------------------------------------------------------------------------
 // Rôle de la tâche <Entree>
@@ -18,28 +18,18 @@
 
 /////////////////////////////////////////////////////////////////  INCLUDE
 //--------------------------------------------------- Interfaces utilisées
+#include "Configuration.h"
 
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
 
-//extern struct MemEtat* memo;
-struct MemoEtat{
-        char occupation;
-        long heureEntree;
-};
 
-extern void detruireSegment(int);
-
-struct msgbuff {
-        long type;
-        char texte[2];
-};
 
 //int numPlaceRecuperee;
 //pid_t pidVoiturier;
 
-extern  int id_fileEntree;
+//extern  int id_fileEntree;
 //////////////////////////////////////////////////////////////////  PUBLIC
 //---------------------------------------------------- Fonctions publiques
 
@@ -67,7 +57,7 @@ break;
 //
 // Contrat :
 //
-void Entree(int numPorte, enum TypeBarriere barriere, int id_mem_param, int id_sem_param, int id_bal_param);
+void Sortie(int id_mem, int id_sem, int id_bal);
 //
-#endif // Entree_H
+#endif // Sortie_H
 

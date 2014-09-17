@@ -1,0 +1,14 @@
+
+------ Shared Memory Segments --------
+key        shmid      owner      perms      bytes      nattch     status      
+0x00000000 2949120    nejat      600        393216     2          dest         
+0x00000000 5636097    nejat      600        998400     2          dest         
+0x00000000 5668866    nejat      600        998400     2          dest         
+0x00000000 5701635    nejat      600        300000     2          dest         
+0x00000000 4882436    nejat      600        262080     2          dest         
+0x00000000 5734405    nejat      600        300000     2          dest         
+0x00000000 5767174    nejat      600        300000     2          dest         
+0x00000000 5799943    nejat      600        300000     2          dest         
+0x00000000 5308428    nejat      600        998400     2          dest         
+0x00000000 5341197    nejat      600        300000     2          dest         
+

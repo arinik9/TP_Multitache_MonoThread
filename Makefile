@@ -7,7 +7,7 @@ LIBS = -ltp -lncurses -ltcl
 EDL_FLAG = $(LIB_PATH) -o $(EXE)
 CC_FLAG = $(INC_PATH) -Wall -fexceptions -c -o
 MAIN = Mere
-INT = Clavier.h Entree.h Configuration.h
+INT = Clavier.h Entree.h Configuration.h Sortie.h
 REA = $(INT:.h=.cpp)
 OBJ = $(INT:.h=.o)
 RM = rm
@@ -25,3 +25,4 @@ $(EXE) : $(OBJ) $(MAIN).o
 
 clean :
 	$(RM) -f $(OBJ) $(MAIN).o core
+

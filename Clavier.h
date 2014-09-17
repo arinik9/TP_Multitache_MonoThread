@@ -22,6 +22,11 @@
 //------------------------------------------------------------- Constantes
 
 //------------------------------------------------------------------ Types
+extern int id_fileEntree;
+struct MsgbufClavier {
+        long type;
+        char texte[2];
+};
 
 //////////////////////////////////////////////////////////////////  PUBLIC
 //---------------------------------------------------- Fonctions publiques
@@ -30,7 +35,8 @@
 //
 // Contrat :
 //
-void Clavier();
+void Clavier(int id_bal);
 void Commande ( char code, unsigned int valeur );
 
 #endif // Clavier_H
+

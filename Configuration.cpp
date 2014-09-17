@@ -38,58 +38,12 @@
 //} //----- fin de nom
 
 //////////////////////////////////////////////////////////////////  PUBLIC
+//extern MemEtat memEtat;
+//extern memEtat memoireEtat[8];
+//extern int tailleMemoireEtat;
+
+//typedef struct MemEtat memEtat;
+//typedef struct MemDemandes memDemandes;
+//memEtat listeParkingEtat[8];  // NB_PLACES = 8 est défini dans le fichier Outils.h
+//memDemandes listeParkingRequetes[3]; // au max, il y aura 3 requetes
 //---------------------------------------------------- Fonctions publiques
-int creerSegment(int size, char *name, int cle){
-// Algorithme :
-//
-	int shmid ; // l'identificateur de la memoire partagee 
-	key_t clef ; // la clef associee au segment
-
-	/* L'instruction ftok(name,(key_t) cle) permet de construire 
-	une cle identifiant le segment */
-	clef = ftok(name,(key_t) cle) ;
-  
-
-	/* L'instruction IPC_CREAT|IPC_EXCL|SHM_R|SHM_W permet d'indiquer 
-	les droits d'acces de ce segment de memoire */
-
-
-	shmid = shmget( clef, size, IPC_CREAT|IPC_EXCL|SHM_R|SHM_W ) ;
-	if ( shmid== -1 ) {
-		perror("La creation du segment de memoire partage a echouee") ;
-		exit(1) ; // on laisse tout tomber et on sort du programme
-	}
-
-	printf("l'identificateur du segment est %d \n",shmid) ;
-	printf("ce segment est associe a la clef %d \n",clef) ;
-
-	return shmid ;
-}//----- fin de creerSegment
-
-void afficherInfoSegment(int shmid) {
-// Algorithme :
-//
-	struct shmid_ds buf ;
-
-	if (shmctl(shmid,IPC_STAT,&buf) == -1){
-		perror("Erreur lors de l'utilsation de infoSegment") ;
-		exit(1) ;
-	}
-
-	printf("Affichage des champs de controles\n") ;
-	printf("identificateur du proprietaire : %d\n",buf.shm_perm.uid) ;
-	printf("identificateur du groupe du proprietaire : %d\n",buf.shm_perm.gid) ;
-	printf("identificateur du createur : %d\n",buf.shm_perm.cuid) ;
-	printf("identificateur du groupe du createur : %d\n",buf.shm_perm.cgid) ;
-	printf("mode d'acces : %d\n",buf.shm_perm.mode) ;
-	printf("taille du segment : %d\n",buf.shm_segsz) ;
-}//----- fin de afficherInfoSegment
-
-void detruireSegment(int shmid) {
-// Algorithme :
-//
-	if (shmctl(shmid,IPC_RMID,NULL) == -1){
-		perror("Erreur lors de la destruction") ;
-		exit(1) ;
-	}
-}//----- fin de detruireSegment

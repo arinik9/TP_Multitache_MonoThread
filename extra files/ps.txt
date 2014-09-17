@@ -1,0 +1,1 @@
+0 S nejat     2632  2630  0  80   0 -  3398 pipe_w 19:29 pts/1    00:00:00 grep Parking

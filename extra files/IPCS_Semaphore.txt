@@ -1,0 +1,5 @@
+
+------ Semaphore Arrays --------
+key        semid      owner      perms      nsems     
+0xcbc384f8 229376     nejat      600        1         
+
